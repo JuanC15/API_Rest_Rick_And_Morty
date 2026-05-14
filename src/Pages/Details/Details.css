@@ -1,6 +1,137 @@
+.detailsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 380px);
+    padding: 32px 16px;
+    background: linear-gradient(135deg, rgba(6, 10, 26, 0.5) 0%, rgba(10, 20, 40, 0.5) 100%);
+}
+
+.detailsCard{
+    display: flex;
+    gap: 48px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+}
+
+.detailsImageSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 320px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 24px;
+}
+
 .imgDetails{
-    width: 300px;
-    height: 300px;
-    object-fit: contain;;
-    border-radius: 10px;
+    width: 280px;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: white;
+    padding: 12px;
+}
+
+.detailsInfoSection{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 32px;
+}
+
+.detailsName{
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 24px 0;
+}
+
+.detailsInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 0 32px 0;
+}
+
+.infoRow{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+}
+
+.infoLabel{
+    font-weight: 600;
+    color: #667eea;
+    min-width: 100px;
+}
+
+.infoValue{
+    color: #555;
+    font-weight: 500;
+}
+
+.status-alive{
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.status-dead{
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.status-unknown{
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.backButton{
+    align-self: flex-start;
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover{
+    background: #5568d3;
+    transform: translateX(-4px);
+}
+
+.loading{
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+}
+
+@media (max-width: 768px){
+    .detailsCard{
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .detailsImageSection{
+        min-width: auto;
+        min-height: 320px;
+    }
+    
+    .imgDetails{
+        width: 240px;
+        height: 240px;
+    }
+    
+    .detailsName{
+        font-size: 24px;
+    }
 }

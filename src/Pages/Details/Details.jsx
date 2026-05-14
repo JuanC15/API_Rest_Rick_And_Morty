@@ -8,25 +8,53 @@ const Details = () => {
 
     const [character, setCharacter] = useState(null);
     
-    useEffect(() => {               
-        fetch(`https://rickandmortyapi.com/api/characters/${id}`)
-            .then(res => res.json())
-            .then(data => setCharacter(data))        
-    }, [])
+    useEffect(() => {
+        setCharacter(null);
+        console.log('Fetching character with ID:', id);
+        fetch(`https://rickandmortyapi.com/api/character/${id}`)
+            .then(res => {
+                console.log('Response status:', res.status);
+                if (!res.ok) throw new Error('API Error');
+                return res.json();
+            })
+            .then(data => {
+                console.log('Character data:', data);
+                setCharacter(data);
+            })
+            .catch(error => {
+                console.error('Error fetching character:', error);
+                navigate(-1);
+            })        
+    }, [id, navigate])
     
   return (
-    <div>
-        <h1>Detalles de {id}</h1>
+    <div className='detailsContainer'>
         {character ? (
-            <div>
-                <p>Name: {character.name}</p>
-                <p>Gender: {character.gender}</p>
-                <p>Race: {character.race}</p>
-                <img className="imgDetails" src={character.image} alt={character.name} />
-                <button onClick={() => navigate(-1)}>Ir atras</button>
+            <div className='detailsCard'>
+                <div className='detailsImageSection'>
+                    <img className="imgDetails" src={character.image} alt={character.name} />
+                </div>
+                <div className='detailsInfoSection'>
+                    <h1 className='detailsName'>{character.name}</h1>
+                    <div className='detailsInfo'>
+                        <div className='infoRow'>
+                            <span className='infoLabel'>Especie:</span>
+                            <span className='infoValue'>{character.species}</span>
+                        </div>
+                        <div className='infoRow'>
+                            <span className='infoLabel'>Estado:</span>
+                            <span className={`infoValue status-${character.status?.toLowerCase() || 'unknown'}`}>{character.status}</span>
+                        </div>
+                        <div className='infoRow'>
+                            <span className='infoLabel'>Genero:</span>
+                            <span className='infoValue'>{character.gender}</span>
+                        </div>
+                    </div>
+                    <button className='backButton' onClick={() => navigate(-1)}>← Volver</button>
+                </div>
             </div>
         ) : (
-            <p>Cargando...</p>
+            <p className='loading'>Cargando...</p>
         )}
     </div>
   )
