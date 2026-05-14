@@ -1,21 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 nav{
     display: flex;
     gap: 20px;
     background-color: #04051a;
+    font-size: 20px;
     color: white;
-    padding: 20px;
-    ul{
-        list-style: none;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-        li{
-            cursor: pointer;
-            color: white;
-                &:hover{
-                    color: #e24343;
-                }            
-        }
-    }
+    padding: 18px 24px;
+    font-family: 'Bangers', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    align-items: center;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+nav a{
+    text-decoration: none; /* remove underline */
+    color: inherit;
+    display: inline-block;
+}
+
+nav a li{
+    cursor: pointer;
+    color: white;
+    padding: 8px 12px;
+    font-weight: 700;
+    transition: color 160ms ease, transform 160ms ease;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.6);
+}
+
+nav a li:hover{
+    color: #0fa6c1;
+    transform: translateY(-2px);
+}
+
+nav a, nav a:visited, nav a:active {
+    text-decoration: none !important;
+}
+
+@media (max-width: 640px){
+    nav{font-size:18px;padding:12px}
+    nav ul{gap:8px}
 }
