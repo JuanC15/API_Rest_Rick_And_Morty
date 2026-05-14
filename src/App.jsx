@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Header from './Components/Header/Header'
@@ -9,12 +8,10 @@ import Nav from './Components/Nav/Nav'
 import Home from './Pages/Home/Home'
 import Characters from './Pages/Characters/Characters'
 import Details from './Pages/Details/Details'
-import About from './Pages/About/About'
+import Filtrado from './Pages/Filtrado/Filtrado'
 import Error from './Pages/Error/Error'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Header />
@@ -24,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/characters" element={<Characters />} />
           <Route path="/details/:id" element={<Details />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/filtrado" element={<Filtrado />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </Router>

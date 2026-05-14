@@ -1,0 +1,47 @@
+.card-character {
+  max-width: 345px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1c2333 0%, #0f1420 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-action-area {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card-media {
+  height: 290px;
+  padding-top: 18px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-media:hover {
+  transform: scale(1.2);
+}
+
+.card-content {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.card-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.card-description {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.875rem;
+}

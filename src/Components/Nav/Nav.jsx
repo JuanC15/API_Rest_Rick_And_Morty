@@ -6,9 +6,9 @@ const Nav = () => {
   return (
     <nav>
         <ul>
-            <Link to='/'><li>HOME</li></Link>
-            <Link to='/characters'><li>CHARACTERS</li></Link>
-            <Link to='/about'><li>ABOUT</li></Link>
+            <Link to='/'><li>INICIO</li></Link>
+            <Link to='/characters'><li>TODOS LOS PERSONAJES</li></Link>
+            <Link to='/filtrado'><li>FILTRAR POR ESPECIE</li></Link>
         </ul>
     </nav>
   )
