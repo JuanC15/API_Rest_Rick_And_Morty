@@ -1,16 +1,78 @@
-# React + Vite
+# Entregable API REST — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Resumen corto
+---------------
+Aplicación frontend creada con Vite + React para consumir y mostrar datos de la API REST RIck & Morty del entregable del curso. Proporciona vistas de listado de personajes, detalle individual y opciones de filtrado.
 
-Currently, two official plugins are available:
+Características principales
+-------------------------
+- Páginas: Home, Characters, Details, Error
+- Componentes reutilizables: `Header`, `Nav`, `CardCharacter`, `Footer`
+- Filtrado y búsqueda de personajes según criterios del enunciado
+- Responsive: adaptado para móviles y escritorio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requisitos
+---------
+- Node.js v16+
+- npm
 
-## React Compiler
+Instalación
+-----------
+Clona el repositorio e instala dependencias:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+git clone <repo-url>
+cd Entregable_API_Rest
+npm install
+```
 
-## Expanding the ESLint configuration
+Ejecución en desarrollo
+-----------------------
+Inicia el servidor de desarrollo y abre la URL que muestra Vite:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run dev
+```
+
+Build / Producción
+-------------------
+Genera los archivos de producción y prueba el `preview`:
+
+```bash
+npm run build
+npm run preview
+```
+
+Variables de entorno
+--------------------
+- `VITE_API_BASE_URL=https://rickandmortyapi.com/api/character`
+
+API / Endpoints
+-------------------------
+- `GET /characters` — lista de personajes paginada
+- `GET /characters/:id` — detalle de un personaje
+
+Estructura del proyecto
+-----------------------
+- `src/` — código fuente: componentes, páginas, estilos
+- `public/` — assets estáticos
+- `package.json` — scripts y dependencias
+
+Scripts útiles
+--------------
+- `npm run dev` — servidor de desarrollo
+- `npm run build` — construir para producción
+- `npm run preview` — servir build localmente
+
+Despliegue
+---------
+Desplegado en Vercel:
+https://api-rest-rick-and-morty.vercel.app/
+
+Autor y licencia
+-----------------
+- Autor: Juan Carlos Aroca Valenzuela
+
+Referencias y entregables
+------------------------
+Las referencias de este entregable se encuentran en el PDF inmerso en el proyecto "Requerimientos del Entregable API Rest.pdf".
